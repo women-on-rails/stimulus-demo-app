@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+ .slide {
+  display: none;
+}
+
+.slide.slide--current {
+  display: block;
+}

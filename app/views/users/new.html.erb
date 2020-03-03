@@ -1,0 +1,14 @@
+<div data-controller="user-form">
+  <div data-target="user-form.commentErrors">
+  </div>
+
+
+  <%= form_with model: @user, html: { data: { type: "html", action: "ajax:success->user-form#onPostSuccess ajax:error->user-form#onPostError" }} do |form| %>
+    <div><%= form.text_field :first_name, placeholder: "John" %></div>
+    <div><%= form.text_field :last_name, placeholder: "Doe" %></div>
+    <div><%= form.text_field :phone_number, placeholder: "you won't get mine" %></div>
+    <div><%= form.email_field :email, placeholder: "john@gmail.com" %></div>
+    <div><%= form.text_field :password, placeholder: "password123" %></div>
+    <div><%= form.submit 'Confirm my subscription' %></div>
+  <% end %>
+</div>
